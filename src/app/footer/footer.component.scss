@@ -1,32 +1,93 @@
 .footer-container {
-    // padding: 0 10rem 0 10rem;
-    height: 10rem;
-    background-color: white;
+    padding: var(--spacing-lg) var(--spacing-xxl);
+    background: var(--color-bg-secondary);
+    border-top: 2px solid transparent;
+    border-image: var(--gradient-primary) 1;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    min-height: 100px;
 }
 
 .links {
+    display: flex;
+    gap: var(--spacing-md);
+
     a {
-        margin-right: 32px;
+        color: var(--color-text-secondary);
         text-decoration: none;
-        color: black;
-        opacity: 0.5;
+        font-weight: 500;
+        font-size: var(--font-size-sm);
+        transition: var(--transition-fast);
+        position: relative;
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width var(--transition-normal);
+        }
+
         &:hover {
-            opacity: 1;
+            color: var(--color-accent-cyan);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+
+            &::after {
+                width: 100%;
+            }
         }
     }
 }
 
 .icons {
+    display: flex;
+    gap: var(--spacing-md);
+
     img {
-        height: 50px;
-        margin-left: 32px;
+        height: 40px;
+        width: 40px;
         cursor: pointer;
-        opacity: 0.5;
+        transition: var(--transition-fast);
+        filter: grayscale(50%) opacity(0.7);
+
         &:hover {
-            opacity: 1;
+            filter: grayscale(0%) opacity(1);
+            transform: translateY(-3px);
+            filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.5));
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 800px) {
+    .footer-container {
+        padding: var(--spacing-md) 2rem;
+    }
+}
+
+@media (max-width: 550px) {
+    .footer-container {
+        flex-direction: column;
+        gap: var(--spacing-md);
+        padding: var(--spacing-md) 1.5rem;
+        text-align: center;
+    }
+
+    .links {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+
+    .icons {
+        gap: var(--spacing-sm);
+
+        img {
+            height: 35px;
+            width: 35px;
         }
     }
 }

@@ -1,15 +1,10 @@
-<header class="padding-lr" [class.headerDark]="router.url == '/data-protection' || router.url == '/imprint'">
-    <!--[class.headerDark]="darkMode"-->
-    <img [class.d-unset]="router.url != '/imprint' && router.url != '/data-protection'" src="assets/img/logo.png">
-    <!--   -->
-    <img [class.d-unset]="router.url == '/imprint' || router.url == '/data-protection'" src="assets/img/logo2.png">
-    <div [class.darkLinks]="router.url == '/data-protection' || router.url == '/imprint'">
-        <!-- -->
-        <button class="btn-menu" [class.btnDark]="router.url != '/imprint' && router.url != '/data-protection'"
-            mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+<header class="padding-lr">
+    <img  src="assets/img/logo.png">
+    <div >
+        <button class="btn-menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
             <mat-icon>menu</mat-icon>
         </button>
-        <mat-menu [class.menu-white]="router.url == '/imprint' || router.url == '/data-protection'" #menu="matMenu"
+        <mat-menu #menu="matMenu"
             class="custom-menu">
             <a mat-menu-item href="#home">HOME</a>
             <a mat-menu-item href="#skills">SKILLS</a>

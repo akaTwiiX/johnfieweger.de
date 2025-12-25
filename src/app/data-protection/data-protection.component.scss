@@ -1,14 +1,98 @@
-.data-container {
-    background: white;
-    // padding: 10rem 10rem 1rem 10rem;
-    padding-top: 10rem;
-    padding-bottom: 1rem;
-    border-bottom: 2px solid grey;
-    word-break: break-all;
-}
-
 .header {
     position: sticky;
     top: 0;
     z-index: 100;
+}
+
+.data-container {
+    min-height: 100vh;
+    padding: calc(80px + var(--spacing-xl)) var(--spacing-xxl) var(--spacing-xl);
+    background: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h1 {
+        font-family: var(--font-heading);
+        font-size: var(--font-size-xxl);
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: var(--spacing-lg);
+    }
+
+    h2 {
+        font-family: var(--font-heading);
+        color: var(--color-accent-cyan);
+        margin-top: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
+    }
+
+    h3 {
+        font-family: var(--font-heading);
+        color: var(--color-accent-purple);
+        margin-top: var(--spacing-md);
+        margin-bottom: var(--spacing-sm);
+    }
+
+    p,
+    ul,
+    li {
+        color: var(--color-text-secondary);
+        line-height: 1.8;
+        margin-bottom: var(--spacing-sm);
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+
+    a {
+        color: var(--color-accent-cyan);
+        text-decoration: none;
+        transition: var(--transition-fast);
+
+        &:hover {
+            color: var(--color-accent-purple);
+            text-decoration: underline;
+        }
+    }
+
+    ul {
+        padding-left: var(--spacing-lg);
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 800px) {
+    .data-container {
+        padding: calc(80px + var(--spacing-lg)) 2rem var(--spacing-lg);
+
+        h1 {
+            font-size: var(--font-size-xl);
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    .data-container {
+        padding: calc(80px + var(--spacing-md)) 1.5rem var(--spacing-md);
+
+        h1 {
+            font-size: var(--font-size-lg);
+        }
+
+        h2 {
+            font-size: var(--font-size-md);
+        }
+
+        h3 {
+            font-size: var(--font-size-sm);
+        }
+
+        p,
+        ul,
+        li {
+            font-size: 0.9rem;
+        }
+    }
 }

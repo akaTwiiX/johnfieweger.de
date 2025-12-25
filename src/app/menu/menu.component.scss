@@ -1,72 +1,169 @@
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     height: 80px;
-    z-index: 1;
+    z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    // padding: 0 10rem 0 10rem;
-    background: RGB(139, 133, 137);
+    padding: 0 var(--spacing-xxl);
+    background: var(--glass-bg);
+    backdrop-filter: var(--glass-blur);
+    -webkit-backdrop-filter: var(--glass-blur);
+    border-bottom: 1px solid var(--glass-border);
+    transition: var(--transition-normal);
+
     a {
-        color: white;
+        color: var(--color-text-primary);
         text-decoration: none;
-        margin-left: 5rem;
-        font-weight: 500;
-        font-size: 1.5rem;
+        margin-left: 3rem;
+        font-weight: 600;
+        font-size: 1.125rem;
+        letter-spacing: 0.5px;
+        position: relative;
+        transition: var(--transition-fast);
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-primary);
+            transition: width var(--transition-normal);
+        }
+
         &:hover {
-            color: RGB(255, 218, 185);
+            color: var(--color-accent-cyan);
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+
+            &::after {
+                width: 100%;
+            }
         }
     }
+
     img {
-        height: 80px;
-        display: none;
+        height: 60px;
+        width: auto;
+        filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
+        transition: var(--transition-normal);
+
+        &:hover {
+            filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.5));
+            transform: scale(1.05);
+        }
     }
 }
 
 .container {
-    background-color: white;
+    background-color: transparent;
 }
 
 .darkLinks {
     a {
-        color: black;
+        color: var(--color-text-primary);
+
         &:hover {
-            color: rgba($color: #000000, $alpha: 0.8);
+            color: var(--color-accent-purple);
+            text-shadow: 0 0 10px rgba(183, 68, 255, 0.5);
         }
     }
 }
 
 .headerDark {
-    background: white;
-    box-shadow: 0 1px 3px 0 rgba($color: #000000, $alpha: 0.2);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+
+    a {
+        color: var(--color-bg-primary);
+
+        &:hover {
+            color: var(--color-accent-purple);
+        }
+    }
+
+    img {
+        filter: none;
+    }
 }
 
 .d-unset {
-    display: unset !important;
+    display: block !important;
 }
 
 .btn-menu {
     display: none;
-}
+    color: var(--color-text-primary);
+    transition: var(--transition-fast);
+    background: transparent;
+    border-radius: var(--radius-sm);
 
-.btnDark {
-    color: white;
-}
-
-.mat-menu-item {
-    color: white;
-    background-color: RGB(139, 133, 137);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.5rem;
     &:hover {
-        color: RGB(255, 218, 185);
+        color: var(--color-accent-cyan);
+        background: rgba(0, 212, 255, 0.1);
+    }
+
+    .mat-icon {
+        color: inherit;
     }
 }
 
-::ng-deep .custom-menu {
-    background-color: RGB(139, 133, 137) !important;
+
+::ng-deep .mat-mdc-menu-item {
+    color: var(--color-text-primary);
+    font-weight: 600;
+    font-size: 1.125rem;
+    transition: var(--transition-fast);
+
+    &:hover {
+        background: rgba(0, 212, 255, 0.1) !important;
+        color: var(--color-accent-cyan) !important;
+    }
+}
+
+::ng-deep .mat-mdc-menu-panel {
+    background-color: var(--color-bg-secondary) !important;
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.menu-white {
+    ::ng-deep .mat-mdc-menu-item {
+        color: var(--color-bg-primary);
+
+        &:hover {
+            background: rgba(183, 68, 255, 0.1) !important;
+            color: var(--color-accent-purple) !important;
+        }
+    }
+}
+
+// Responsive adjustments
+@media (max-width: 1000px) {
+    header {
+        padding: 0 5rem;
+    }
+}
+
+@media (max-width: 800px) {
+    header {
+        padding: 0 2rem;
+
+        a {
+            margin-left: 1.5rem;
+        }
+    }
+}
+
+@media (max-width: 550px) {
+    header {
+        padding: 0 1.5rem;
+    }
 }

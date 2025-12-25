@@ -14,7 +14,6 @@ export class SkillsComponent implements OnInit {
     {
       'name': 'JavaScript',
       'img': 'javascript',
-      'animation': 'data-aos="fade-right"'
     },
     {
       'name': 'TypeScript',
@@ -28,10 +27,10 @@ export class SkillsComponent implements OnInit {
       'name': 'CSS',
       'img': 'css'
     },
-    {
-      'name': 'SCSS',
-      'img': 'scss'
-    },
+    // {
+    //   'name': 'SCSS',
+    //   'img': 'scss'
+    // },
     {
       'name': 'Angular',
       'img': 'angular'
@@ -62,29 +61,25 @@ export class SkillsComponent implements OnInit {
       'img': 'django'
     },
     {
-      'name': 'Rest API',
-      'img': 'restapi'
-    },
-    {
       'name': 'Databases',
       'img': 'database'
     },
-    {
-      'name': 'Test Automation',
-      'img': 'test'
-    },
-    {
-      'name': 'React / -Native',
-      'img': 'react-reactnative'
-    },
-    {
-      'name': 'Design Thinking',
-      'img': 'thinking'
-    },
-    {
-      'name': 'SCRUM',
-      'img': 'scrum'
-    }
+    // {
+    //   'name': 'Rest API',
+    //   'img': 'restapi'
+    // },
+    // {
+    //   'name': 'Test Automation',
+    //   'img': 'test'
+    // },
+    // {
+    //   'name': 'Design Thinking',
+    //   'img': 'thinking'
+    // },
+    // {
+    //   'name': 'SCRUM',
+    //   'img': 'scrum'
+    // }
   ]
 
   constructor() { }
