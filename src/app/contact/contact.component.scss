@@ -267,3 +267,47 @@
         padding: var(--space-6);
     }
 }
+
+@media (max-width: 600px) {
+    .contact-section {
+        padding: var(--space-12) var(--space-4);
+        min-height: auto;
+    }
+
+    .contact-container {
+        gap: var(--space-4);
+    }
+
+    .contact-form-wrapper,
+    .contact-info-card {
+        padding: var(--space-4);
+    }
+
+    .contact-method {
+        padding: var(--space-3);
+        gap: var(--space-3);
+        
+        &:hover {
+            transform: translateX(4px);
+        }
+    }
+
+    .method-icon {
+        width: 40px;
+        height: 40px;
+        
+        svg {
+            width: 20px;
+            height: 20px;
+        }
+    }
+
+    .method-value {
+        font-size: var(--text-sm);
+        word-break: break-all;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-6);
+    }
+}
