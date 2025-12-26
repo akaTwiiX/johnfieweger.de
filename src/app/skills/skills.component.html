@@ -1,17 +1,19 @@
-<div id="skills" class="skill-container">
-    <div>
-        <h2>My Skills</h2>
-        <div class="skills">
-            @for (skill of skill; track $index) {
-            <div data-aos="zoom-in" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000"
-                class="skill-box">
-                <div class="img-bg">
-                    <img src="../../assets/img/skills/{{ skill.img }}.png">
-                </div>
-
-                <span>{{ skill.name }}</span>
-            </div>
-            }
-        </div>
+<section id="skills" class="skills-section">
+    <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">Tech Stack</h2>
+        <p class="section-subtitle">Technologies I work with to build modern applications</p>
     </div>
-</div>
+    
+    <div class="skills-grid">
+        @for (skill of skill; track $index) {
+            <div class="skill-card" 
+                 data-aos="zoom-in" 
+                 data-aos-duration="600">
+                <div class="skill-icon">
+                    <img src="../../assets/img/skills/{{ skill.img }}.png" alt="{{ skill.name }}">
+                </div>
+                <h3 class="skill-name">{{ skill.name }}</h3>
+            </div>
+        }
+    </div>
+</section>

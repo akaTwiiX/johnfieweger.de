@@ -1,31 +1,58 @@
 <div class="header">
     <app-menu></app-menu>
 </div>
-<div id="home" class="home-container padding-lr">
-    <div class="start-container">
-        <div class="main">
-            <div class="flyInLeft header-box">
-                <div class="text">
-                    Hi, <br> I'm
-                    <span style="color: RGB(139, 133, 137);">John</span> Fieweger <br> Fullstack Develop<span
-                        style="color: RGB(255, 218, 185);">e</span>r
-                </div>
-                <a href="#contact"><button class="btn-contact text">Contact me</button></a>
-            </div>
-            <img class="flyInRight" src="../../assets/img/profile3.png">
-        </div>
-        <a href="#skills" class="arrow-position">
-            <div class="arrow-wrap">
-                <div class="arrow">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
-        </a>
 
+<!-- Hero Section - Immersive Fullscreen -->
+<div id="home" class="hero-section">
+    <div class="hero-background">
+        <div class="gradient-mesh"></div>
+        <div class="particles"></div>
     </div>
+    
+    <div class="hero-content">
+        <div class="hero-text" data-aos="fade-up" data-aos-duration="1000">
+            <h1 class="hero-name">
+                <span class="name-first">John</span>
+                <span class="name-last">Fieweger</span>
+            </h1>
+            <div class="hero-tagline">
+                <span class="tagline-label">Fullstack Developer</span>
+                <span class="tagline-cursor">|</span>
+            </div>
+            <p class="hero-subtitle">
+                Crafting modern web experiences with passion & precision
+            </p>
+            <div class="hero-cta">
+                <a href="#contact" class="btn-primary">
+                    <span>Let's Talk</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10h12m0 0l-4-4m4 4l-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </a>
+                <a href="#portfolio" class="btn-secondary">
+                    <span>View Work</span>
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-image" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+            <div class="image-card">
+                <img src="../../assets/img/profile3.png" alt="John Fieweger">
+                <div class="image-glow"></div>
+            </div>
+        </div>
+    </div>
+    
+    <a href="#skills" class="scroll-indicator">
+        <div class="scroll-text">Scroll to explore</div>
+        <div class="scroll-arrow">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </a>
 </div>
+
 <app-skills></app-skills>
 <app-portfolio></app-portfolio>
 <app-about></app-about>

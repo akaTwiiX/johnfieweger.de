@@ -1,25 +1,37 @@
-<div id="about" class="about-container padding-lr">
-    <div>
-        <div class="profile">
-            <img src="../../assets/img/profile3.jpg">
-            <div>
-                <span>About me</span>
-                <p>"I'm a sport and car-tuning enthusiast and a fullstack developer who love programming"</p>
-            </div>
-        </div>
-        <div class="journey-container">
-            @for (journey of journey; track $index) {
-            <div class="journey" data-aos="flip-down" data-aos-anchor-placement="bottom-bottom"
-                data-aos-duration="1000">
-                <div>
-                    <img src="../../assets/img/Portfolio developer Akademie - Portfolio/{{ journey.img }}">
-                </div>
-                <span>{{ journey.title }}</span>
-                <P>{{ journey.description }}</P>
-            </div>
-            }
-
-        </div>
+<section id="about" class="about-section">
+    <div class="section-header" data-aos="fade-up">
+        <h2 class="section-title">About Me</h2>
+        <p class="section-subtitle">My journey in software development</p>
     </div>
-
-</div>
+    
+    <!-- Bento Grid Layout -->
+    <div class="bento-grid">
+        <!-- Profile Card (Large) -->
+        <div class="bento-item profile-card" data-aos="fade-up">
+            <div class="profile-image-wrapper">
+                <img src="../../assets/img/profile3.jpg" alt="John Fieweger">
+                <div class="profile-glow"></div>
+            </div>
+            <div class="profile-content">
+                <h3>John Fieweger</h3>
+                <p class="profile-role">Fullstack Developer</p>
+                <p class="profile-bio">
+                    "I'm a sport and car-tuning enthusiast and a fullstack developer who loves programming"
+                </p>
+            </div>
+        </div>
+        
+        <!-- Journey Cards -->
+        @for (item of journey; track $index) {
+            <div class="bento-item journey-card" 
+                 data-aos="flip-up" 
+                 data-aos-duration="800">
+                <div class="journey-icon">
+                    <img src="../../assets/img/Portfolio developer Akademie - Portfolio/{{ item.img }}" alt="{{ item.title }}">
+                </div>
+                <h4>{{ item.title }}</h4>
+                <p>{{ item.description }}</p>
+            </div>
+        }
+    </div>
+</section>
