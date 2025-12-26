@@ -15,7 +15,7 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding: var(--space-20) var(--space-6);
+    padding: var(--space-20) var(--space-4);
 }
 
 /* Background Layers */
@@ -98,7 +98,7 @@
 }
 
 .name-first {
-    font-size: clamp(3rem, 8vw, var(--text-6xl));
+    font-size: clamp(2.5rem, 8vw, var(--text-6xl));
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -107,7 +107,7 @@
 }
 
 .name-last {
-    font-size: clamp(4rem, 10vw, 6rem);
+    font-size: clamp(3rem, 10vw, 6rem);
     color: var(--color-text-primary);
     text-shadow:
         0 0 40px rgba(0, 212, 255, 0.3),
@@ -400,7 +400,7 @@
 
 @media (max-width: 600px) {
     .hero-section {
-        padding: var(--space-12) var(--space-4);
+        padding: var(--space-12) var(--space-2);
     }
 
     .hero-cta {

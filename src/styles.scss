@@ -191,6 +191,15 @@
     --z-modal: 1400;
     --z-popover: 1500;
     --z-tooltip: 1600;
+
+    @media (max-width: 600px) {
+        --text-xl: 1.25rem;
+        --text-2xl: 1.5rem;
+        --text-3xl: 1.75rem;
+        --text-4xl: 2rem;
+        --text-5xl: 2.5rem;
+        --text-6xl: 3rem;
+    }
 }
 
 /* ============================================
@@ -214,6 +223,8 @@ html,
 body {
     height: 100%;
     width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 body {
