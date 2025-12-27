@@ -7,39 +7,34 @@
 
     </div>
     <div class="work-box padding-lr">
-        @for (portfolio of portfolio; track $index) {
-        <div>
-            <!-- If filter inactive, show all projectes -->
-            @if (filterInActive) {
-            <div data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000"
-                class="img-container">
-                <div>
-                    <h3>{{ portfolio.name }}</h3> <br>
-                    <p>{{ portfolio.engine }} - {{ portfolio.description }}</p>
-                    <a target="_blank" href="{{ portfolio.address }}">
-                        <button>Try out</button>
+        @for (project of filteredPortfolio; track project.name) {
+        <div data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000"
+            class="img-container">
+            <div>
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.description }}</p>
+                <div class="engine-icons">
+                    @for (engine of project.engine; track $index) {
+                        <img [src]="getEngineIcon(engine)" [alt]="engine" [title]="engine">
+                    }
+                </div>
+                <div class="btn-group">
+                    <a target="_blank" [href]="project.address">
+                        <button class="primary-btn">
+                            <span class="material-icons">open_in_new</span>
+                            Live Demo
+                        </button>
+                    </a>
+                    <a target="_blank" [href]="project.github">
+                        <button class="secondary-btn">
+                            <span class="material-icons">code</span>
+                            GitHub
+                        </button>
                     </a>
                 </div>
-                <img src="../../assets/img/{{ portfolio.img }}">
             </div>
-            }
-            @if (portfolio.engine.includes(currentName)) {
-            <div data-aos="zoom-in-up" data-aos-anchor-placement="bottom-bottom" data-aos-duration="1000"
-                class="img-container">
-                <div>
-                    <h3>{{ portfolio.name }}</h3> <br>
-                    <p>{{ portfolio.engine }} - {{ portfolio.description }}</p>
-                    <a target="_blank" href="{{ portfolio.address }}">
-                        <button>Try out</button>
-                    </a>
-                </div>
-                <img src="../../assets/img/{{ portfolio.img }}">
-            </div>
-            }
-            <!-- If filter active, show all filtered projectes -->
-
+            <img src="../../assets/img/{{ project.img }}">
         </div>
         }
-
     </div>
 </div>
