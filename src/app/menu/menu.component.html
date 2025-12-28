@@ -1,9 +1,7 @@
 <header class="padding-lr">
     <img  src="assets/img/logo.png">
     <div >
-        <button class="btn-menu" mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>menu</mat-icon>
-        </button>
+        <mat-icon [matMenuTriggerFor]="menu" class="mobile-menu-icon">menu</mat-icon>
         <mat-menu #menu="matMenu"
             class="custom-menu">
             <a mat-menu-item href="#home">HOME</a>
